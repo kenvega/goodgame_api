@@ -16,5 +16,12 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        'trailingComma': "all"
+      }
+    ]
   },
 };
