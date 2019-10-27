@@ -4,20 +4,7 @@
   "description": "goodgame api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint:fix",
-      "git add"
-    ]
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -38,5 +25,16 @@
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
