@@ -22,6 +22,9 @@ module.exports = {
         "singleQuote": true,
         'trailingComma': "all"
       }
-    ]
+    ],
+    "consistent-return": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off"
   },
 };
