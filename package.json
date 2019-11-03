@@ -4,7 +4,8 @@
   "description": "goodgame api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --experimental-modules index.js",
+    "dev": "nodemon --experimental-modules index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
+    "nodemon": "^1.19.4",
     "prettier": "^1.18.2"
   },
   "dependencies": {
