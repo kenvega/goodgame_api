@@ -15,26 +15,19 @@ const sequelize = new Sequelize(db.database, db.user, db.password, {
 
 // testing connection
 
-const authenticateDb = () =>
-  new Promise((resolve, reject) => {
-    sequelize
-      .authenticate()
-      .then(() =>
-        console.log(
-          `<< SETUP >> Connection to host localhost has been established successfully.`,
-        ),
-      )
-      .then(() => {
-        return resolve(
-          sequelize.sync({
-            force: true,
-          }),
-        );
-      })
-      .catch(err => {
-        console.error(`<< ERROR >> Unable to connect to the database: ${err}`);
-        reject(err);
-      });
-  });
+const authenticateDb = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log(
+      `<< SETUP >>`,
+      `Connection to host localhost has been established successfully.`,
+    );
+
+    return sequelize.sync({ force: true });
+  } catch (err) {
+    console.error(`<< ERROR >> Unable to connect to the database: ${err}`);
+    throw err;
+  }
+};
 
 export { sequelize, authenticateDb };

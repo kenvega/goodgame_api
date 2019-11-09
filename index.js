@@ -20,10 +20,12 @@ app.get('/', (req, res) => {
 
 app.get('/search', async (req, res) => {
   const { q } = req.query;
-  if (!q)
-    return res.status(400).json({
+  if (!q) {
+    res.status(400).json({
       error: 'required name parameter',
     });
+    return;
+  }
 
   const response = await request(
     `https://www.boardgameatlas.com/api/search?name=${q}&client_id=${clientId}&limit=10`,
