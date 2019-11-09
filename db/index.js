@@ -13,8 +13,6 @@ const sequelize = new Sequelize(db.database, db.user, db.password, {
   },
 });
 
-// testing connection
-
 const authenticateDb = () =>
   new Promise((resolve, reject) => {
     sequelize
