@@ -4,7 +4,8 @@
   "description": "goodgame api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --experimental-modules index.js",
+    "dev": "nodemon --experimental-modules index.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -21,10 +23,17 @@
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2"
+    "nodemon": "^1.19.4",
+    "prettier": "^1.18.2",
+    "sequelize-cli": "^5.5.1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.0.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sequelize": "^5.21.2"
   },
   "husky": {
     "hooks": {
