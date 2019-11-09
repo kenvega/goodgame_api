@@ -2,6 +2,14 @@ import express from 'express';
 import request from 'request';
 import 'request-promise-native';
 import { clientId } from './config/index.js';
+import { authenticateDb } from './db/index.js';
+
+async function main() {
+  await authenticateDb();
+  console.log('connection to db successful');
+}
+
+main().catch(console.error);
 
 const PORT = 3000;
 const app = express();

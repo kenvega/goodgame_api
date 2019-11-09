@@ -13,10 +13,15 @@ const baseConfig = {
 };
 
 export const clientId = process.env.CLIENT_ID;
-export const mysqlPort = process.env.MYSQL_PORT;
+export const db = {
+  port: process.env.MYSQL_PORT,
+  database: process.env.MYSQL_DATABASE,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  host: process.env.MYSQL_HOST,
+};
 
 const envConfig = {
-  mysqlPort,
   clientId,
 };
 
