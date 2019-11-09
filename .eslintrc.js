@@ -23,7 +23,6 @@ module.exports = {
         'trailingComma': "all"
       }
     ],
-    "consistent-return": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off"
   },

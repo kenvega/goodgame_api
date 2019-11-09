@@ -1,0 +1,42 @@
+import Sequelize from 'sequelize';
+import { sequelize } from '../index.js';
+
+const Game = sequelize.define(
+  'game',
+  {
+    // attributes
+    atlasId: {
+      type: Sequelize.STRING,
+      // allowNull defaults to true
+    },
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    minPlayers: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    maxPlayers: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    minPlayTime: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    maxPlayTime: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    // options
+  },
+);
+
+export default Game;
