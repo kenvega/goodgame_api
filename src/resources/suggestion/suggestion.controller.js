@@ -1,11 +1,10 @@
 import Sequelize from 'sequelize';
 import request from 'request';
 import 'request-promise-native';
-import lodash from 'lodash';
+import _ from 'lodash';
 import Game from '../game/game.model.js';
 import { boardgameApi, clientId } from '../../config/index.js';
 
-const { union } = lodash;
 const { Op } = Sequelize;
 
 /**
@@ -46,5 +45,5 @@ export const handleSuggestion = async (req, res) => {
     isVerified: true,
   }));
 
-  res.json(union(apiGameNames, dbGameNames));
+  res.json(_.union(apiGameNames, dbGameNames));
 };
