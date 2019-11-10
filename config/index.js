@@ -12,6 +12,7 @@ const baseConfig = {
   port: process.env.API_PORT,
 };
 
+export const boardgameApi = 'https://www.boardgameatlas.com/api';
 export const clientId = process.env.CLIENT_ID;
 export const db = {
   port: process.env.MYSQL_PORT,
