@@ -25,7 +25,7 @@ const authenticateDb = async () => {
       `Connection to host localhost has been established successfully.`,
     );
 
-    return sequelize.sync({ force: true });
+    return sequelize.sync({ force: false });
   } catch (err) {
     console.error(`<< ERROR >> Unable to connect to the database: ${err}`);
     throw err;
