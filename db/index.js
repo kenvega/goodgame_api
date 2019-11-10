@@ -4,6 +4,9 @@ import { db } from '../config/index.js';
 const sequelize = new Sequelize(db.database, db.user, db.password, {
   host: db.host,
   dialect: 'mysql',
+  define: {
+    charset: 'utf8mb4',
+  },
   // for a single process
   pool: {
     max: 5,
@@ -11,6 +14,7 @@ const sequelize = new Sequelize(db.database, db.user, db.password, {
     acquire: 30000,
     idle: 10000,
   },
+  logging: false,
 });
 
 const authenticateDb = async () => {
