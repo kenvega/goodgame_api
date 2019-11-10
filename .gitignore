@@ -2,4 +2,3 @@ node_modules
 .history
 npm-debug.log
 .env
-ignore
