@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import { sequelize } from '../index.js';
+import { sequelize } from '../../utils/db.js';
 
 const Game = sequelize.define(
   'game',
