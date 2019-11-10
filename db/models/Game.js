@@ -22,14 +22,14 @@ const Game = sequelize.define(
       allowNull: false,
     },
     description: {
+      type: Sequelize.TEXT,
+      allowNull: false,
+    },
+    minPlaytime: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    minPlayTime: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    maxPlayTime: {
+    maxPlaytime: {
       type: Sequelize.STRING,
       allowNull: false,
     },
