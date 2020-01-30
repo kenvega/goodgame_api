@@ -1,11 +1,11 @@
-import Sequelize from 'sequelize';
+// import Sequelize from 'sequelize';
 import request from 'request';
 import 'request-promise-native';
-import _ from 'lodash';
-import Game from '../game/game.model.js';
+// import _ from 'lodash';
+// import Game from '../game/game.model.js';
 import { boardgameApi, clientId } from '../../config/index.js';
 
-const { Op } = Sequelize;
+// const { Op } = Sequelize;
 
 /**
  * use /game-names from atlas api
@@ -21,19 +21,20 @@ export const handleSuggestion = async (req, res) => {
     return;
   }
 
+  // for now, we are only getting suggestions from the 3rd party service
   // get suggestions from DB
-  const dbGames = await Game.findAll({
-    where: {
-      name: {
-        [Op.like]: `%${q}%`,
-      },
-      atlasId: null,
-    },
-  });
-  const dbGameNames = dbGames.map(dbGame => ({
-    name: dbGame.dataValues.name,
-    isVerified: false,
-  }));
+  // const dbGames = await Game.findAll({
+  //   where: {
+  //     name: {
+  //       [Op.like]: `%${q}%`,
+  //     },
+  //     atlasId: null,
+  //   },
+  // });
+  // const dbGameNames = dbGames.map(dbGame => ({
+  //   name: dbGame.dataValues.name,
+  //   isVerified: false,
+  // }));
 
   // get suggestions from atlas api
   const apiGames = await request({
@@ -45,5 +46,5 @@ export const handleSuggestion = async (req, res) => {
     isVerified: true,
   }));
 
-  res.json(_.union(apiGameNames, dbGameNames));
+  res.json(apiGameNames);
 };
