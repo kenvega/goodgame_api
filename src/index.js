@@ -1,6 +1,7 @@
 import express from 'express';
 import { authenticateDb } from './utils/db.js';
 import suggestionRouter from './resources/suggestion/suggestion.router.js';
+import searchRouter from './resources/search/search.router.js';
 
 async function main() {
   await authenticateDb();
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/suggestion', suggestionRouter);
+app.use('/api/search', searchRouter);
 
 app.listen(PORT, () => {
   console.log('info message: listening from port: ', PORT);
